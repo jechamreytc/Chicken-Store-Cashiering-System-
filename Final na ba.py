@@ -13,7 +13,6 @@ while attempts < 5:     # Loop for Log In
 
         main = True
         while main:     # Loop if order is Done
-            print("Welcome User")
             # Flavors
             flavors = ["", "Mild Yangnyeom", "Spicy Yangnyeom", "Garlic Parmesan", "Jack Daniel's", "Garlic Soy",
                        "Garlic Ranch", "Sriracha", "Sweet & Sour", "Gravy", "Salted Egg", "Snow Cheese", "Original"]
@@ -32,176 +31,224 @@ while attempts < 5:     # Loop for Log In
             order_prices = []  # Store Order Prices
             order_flavor = []  # Store Order flavor
             over_total = 0
+            special_order = "None"
 
             next_order = True
             while next_order:     # Loop for adding more items
                 print("MENU \n1 - BLENDED DRINKS \n2 - FRESH LEMONADES \n3 - EXTRAS")
-                menu = int(input("What do you want to order?: "))
+                menu = int(input("What set do you want?: "))
                 if menu == 1:   # BLENDED DRINKS STATEMENTS
-                    print("1 - Chocolate \n2 - Dark Choco Mocha \n3 - Frappuccino \n4 - Oreo")
-                    order = int(input("What's your order?: "))
-                    if order == 1:
-                        order_item.append(drinks[0])
-                        order_prices.append(prices[0])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (prices[0])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    elif order == 2:
-                        order_item.append(drinks[1])
-                        order_prices.append(prices[1])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (prices[1])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    elif order == 3:
-                        order_item.append(drinks[2])
-                        order_prices.append(prices[2])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (prices[2])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    elif order == 4:
-                        order_item.append(drinks[3])
-                        order_prices.append(prices[3])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (prices[3])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    else:
-                        print("Not in the list")
+                    blend = True
+                    while blend:
+                        print("1 - Chocolate(₱55.00) \n2 - Dark Choco Mocha(₱55.00) \n3 - Frappuccino(₱55.00) \n4 - "
+                              "Oreo(₱65.00)")
+                        order = int(input("What's your order?: "))
+                        if order == 1:
+                            order_item.append(drinks[0])
+                            order_prices.append(prices[0])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (prices[0])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            blend = False
+                        elif order == 2:
+                            order_item.append(drinks[1])
+                            order_prices.append(prices[1])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (prices[1])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            blend = False
+                        elif order == 3:
+                            order_item.append(drinks[2])
+                            order_prices.append(prices[2])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (prices[2])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            blend = False
+                        elif order == 4:
+                            order_item.append(drinks[3])
+                            order_prices.append(prices[3])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (prices[3])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            blend = False
+                        else:
+                            print("Not in the list")
+                            blend = True
+                            continue
                 elif menu == 2:     # FRESH LEMONADES STATEMENTS
-                    print("1 - Classic \n2 - Cucumber \n3 - Mixed Berries")
-                    order1 = int(input("What's your order?: "))
-                    if order1 == 1:
-                        order_item.append(fresh_lemonades[0])
-                        order_prices.append(fresh_prices[0])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (fresh_prices[0])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    elif order1 == 2:
-                        order_item.append(fresh_lemonades[1])
-                        order_prices.append(fresh_prices[1])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (fresh_prices[1])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    elif order1 == 3:
-                        order_item.append(fresh_lemonades[2])
-                        order_prices.append(fresh_prices[2])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (fresh_prices[2])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    else:
-                        print("Not in the list")
+                    lemonades = True
+                    while lemonades:
+                        print("1 - Classic(₱55.00) \n2 - Cucumber(₱55.00) \n3 - Mixed Berries(₱55.00)")
+                        order1 = int(input("What's your order?: "))
+                        if order1 == 1:
+                            order_item.append(fresh_lemonades[0])
+                            order_prices.append(fresh_prices[0])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (fresh_prices[0])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            lemonades = False
+                        elif order1 == 2:
+                            order_item.append(fresh_lemonades[1])
+                            order_prices.append(fresh_prices[1])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (fresh_prices[1])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            lemonades = False
+                        elif order1 == 3:
+                            order_item.append(fresh_lemonades[2])
+                            order_prices.append(fresh_prices[2])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (fresh_prices[2])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            lemonades = False
+                        else:
+                            print("Not in the list")
+                            lemonades = True
+                            continue
                 elif menu == 3:     # EXTRAS STATEMENTS
-                    print(
-                        "1 - Rice \n2 - Kimchi \n3 - Rice Meal \n4 - 1 Dozen(with kimchi) \n5 - 2 Dozens(with kimchi)")
-                    order2 = int(input("What's your order?: "))
-                    if order2 == 1:
-                        order_item.append(extras[0])
-                        order_prices.append(extras_prices[0])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (extras_prices[0])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    elif order2 == 2:
-                        order_item.append(extras[1])
-                        order_prices.append(extras_prices[1])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (extras_prices[1])
-                        over_total = over_total + total
-                        order_flavor.append(flavors[0])
-                    elif order2 == 3:
-                        order_item.append(extras[2])
-                        order_prices.append(extras_prices[2])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (extras_prices[2])
-                        over_total = over_total + total
-                        print("Flavors:\n1- Mild Yangnyeom \n2- Spicy Yangnyeom \n3- Garlic Parmesan \n4- Jack "
-                              "Daniel's \n5- "
-                              "Garlic Soy \n6- Garlic Ranch \n7- Sriracha \n8- Sweet & Sour \n9- Gravy \n10- Salted "
-                              "Egg \n11- "
-                              "Snow Cheese \n12- Original")
-                        chicken_flavor = int(input("Chicken Flavor: "))
-                        order_flavor.append(flavors[chicken_flavor])
-                    elif order2 == 4:
-                        order_item.append(extras[3])
-                        order_prices.append(extras_prices[3])
-                        over_total = over_total + extras_prices[3]
-                        arr.append(0)
-                        print("Flavors:\n1- Mild Yangnyeom \n2- Spicy Yangnyeom \n3- Garlic Parmesan \n4- Jack "
-                              "Daniel's \n5- "
-                              "Garlic Soy \n6- Garlic Ranch \n7- Sriracha \n8- Sweet & Sour \n9- Gravy \n10- Salted "
-                              "Egg \n11- "
-                              "Snow Cheese \n12- Original")
-                        chicken_flavor = int(input("Chicken Flavor: "))
-                        order_flavor.append(flavors[chicken_flavor])
-                    elif order2 == 5:
-                        order_item.append(extras[4])
-                        order_prices.append(extras_prices[4])
-                        how_many = int(input("How many?: "))
-                        arr.append(how_many)
-                        total = how_many * (extras_prices[4])
-                        over_total = over_total + total
-                        print("Flavors:\n1- Mild Yangnyeom \n2- Spicy Yangnyeom \n3- Garlic Parmesan \n4- Jack "
-                              "Daniel's \n5- "
-                              "Garlic Soy \n6- Garlic Ranch \n7- Sriracha \n8- Sweet & Sour \n9- Gravy \n10- Salted "
-                              "Egg \n11- "
-                              "Snow Cheese \n12- Original")
-                        chicken_flavor = int(input("Chicken Flavor: "))
-                        order_flavor.append(flavors[chicken_flavor])
-                    else:
-                        print("Not in the list")
+                    extra = True
+                    while extra:
+                        print(
+                            "1 - Rice(₱15.00) \n2 - Kimchi(₱25.00) \n3 - Rice Meal(₱68.00) \n4 - 1 Dozen(with "
+                            "kimchi)(₱180.00) \n5 - 2 Dozens(with "
+                            "kimchi)(₱350.00)")
+                        order2 = int(input("What's your order?: "))
+                        if order2 == 1:
+                            order_item.append(extras[0])
+                            order_prices.append(extras_prices[0])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (extras_prices[0])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            extra = False
+                        elif order2 == 2:
+                            order_item.append(extras[1])
+                            order_prices.append(extras_prices[1])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (extras_prices[1])
+                            over_total = over_total + total
+                            order_flavor.append(flavors[0])
+                            extra = False
+                        elif order2 == 3:
+                            order_item.append(extras[2])
+                            order_prices.append(extras_prices[2])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (extras_prices[2])
+                            over_total = over_total + total
+                            print("Flavors:\n1- Mild Yangnyeom \n2- Spicy Yangnyeom \n3- Garlic Parmesan \n4- Jack "
+                                  "Daniel's \n5- "
+                                  "Garlic Soy \n6- Garlic Ranch \n7- Sriracha \n8- Sweet & Sour \n9- Gravy \n10- "
+                                  "Salted "
+                                  "Egg \n11- "
+                                  "Snow Cheese \n12- Original")
+                            chicken_flavor = int(input("Chicken Flavor: "))
+                            order_flavor.append(flavors[chicken_flavor])
+                            extra = False
+                        elif order2 == 4:
+                            order_item.append(extras[3])
+                            order_prices.append(extras_prices[3])
+                            over_total = over_total + extras_prices[3]
+                            arr.append(0)
+                            print("Flavors:\n1- Mild Yangnyeom \n2- Spicy Yangnyeom \n3- Garlic Parmesan \n4- Jack "
+                                  "Daniel's \n5- "
+                                  "Garlic Soy \n6- Garlic Ranch \n7- Sriracha \n8- Sweet & Sour \n9- Gravy \n10- "
+                                  "Salted "
+                                  "Egg \n11- "
+                                  "Snow Cheese \n12- Original")
+                            chicken_flavor = int(input("Chicken Flavor: "))
+                            order_flavor.append(flavors[chicken_flavor])
+                            extra = False
+                        elif order2 == 5:
+                            order_item.append(extras[4])
+                            order_prices.append(extras_prices[4])
+                            how_many = int(input("How many?: "))
+                            arr.append(how_many)
+                            total = how_many * (extras_prices[4])
+                            over_total = over_total + total
+                            print("Flavors:\n1- Mild Yangnyeom \n2- Spicy Yangnyeom \n3- Garlic Parmesan \n4- Jack "
+                                  "Daniel's \n5- "
+                                  "Garlic Soy \n6- Garlic Ranch \n7- Sriracha \n8- Sweet & Sour \n9- Gravy \n10- "
+                                  "Salted "
+                                  "Egg \n11- "
+                                  "Snow Cheese \n12- Original")
+                            chicken_flavor = int(input("Chicken Flavor: "))
+                            order_flavor.append(flavors[chicken_flavor])
+                            special_order = input("Special Order: ")
+                            extra = False
+                        else:
+                            print("Not in the list")
+                            extra = True
+                            continue
+                elif menu == 0:
+                    exit()
                 else:
                     print("Not in the Menu List")
+                    main = True
+                    continue
                 add1 = True
                 while add1:     # Loop for adding more Items
-                    add = input("Do you want to add more? Y/N: ")
-                    if add == "Y":
+                    add = input("Do you want to add more? Y for yes/N for no: ")
+                    if add == "Y" or add == "y":
                         add1 = False
                         next_order = True
-                    elif add == "N":
-                        special_orders = input("Special Orders: ")  # Cashier Only
+                    elif add == "N" or add == "n":
                         next_order = False
                         print("\n")
-                        print("         Chicken Chicken",
-                              "\n         CHICKEN CHICKEN")
-                        print("Cashier: Owner")
-                        print("POS: POS 1")
+                        print("All Orders:")
                         print("........................")
                         [print(z, "x", x, "-", y, w)
                          for (z, x, y, w) in zip(arr, order_item, order_prices, order_flavor)]
-                        print("Special Orders:", special_orders)
+                        print("Special Order: ", special_order)
                         print("........................")
                         print("Total", over_total)
                         print("   ")
                         payment = True
                         while payment:      # Loop for payment
-                            cos_money = int(input("Cash:      "))
+                            cos_money = int(input("Cash: "))
                             if cos_money < over_total:
                                 change = cos_money - over_total
                                 print("Customer is lack of payment of", change)
                                 payment = True
                             else:
                                 change = cos_money - over_total
+                                print("\n")
+                                print("........................")
+                                print('\033[1m' + '         Chicken Chicken' + '\033[0m'
+                                      "\n         CHICKEN CHICKEN")
+                                print("")
+                                print("Cashier: Owner")
+                                print("POS: POS 1")
+                                print("........................")
+                                [print(z, "x", x, "-", y, w)
+                                 for (z, x, y, w) in zip(arr, order_item, order_prices, order_flavor)]
+                                print("Special Order: ", special_order)
+                                print("........................")
+                                print('\033[1m' + 'Total     ' + '\033[0m', '\033[1m' + str(over_total) + '\033[0m')
+                                print("   ")
+                                print("Cash:     ", cos_money)
                                 print("Change:   ", change)
                                 print("........................")
                                 print("PHINMA-Cagayan de Oro College \nCarmen, Cagayan de Oro City")
                                 time = datetime.datetime.now()
                                 print(time.strftime("%m-%d-%y     %H:%M:%S%p"), "#1-", random.randrange(1000, 5000))
+                                print("........................")
                                 print("\n")
                                 payment = False
                                 main = True
